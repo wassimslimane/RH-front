@@ -1,0 +1,23 @@
+<div class="panel-header panel-header-sm"></div>
+
+  <div class="content-section implementation">
+    <p-toast [style]="{marginTop: '80px'}"></p-toast>
+    <div class="card">
+
+      <p-organizationChart [value]="data1" selectionMode="single" [(selection)]="selectedNode" (onNodeSelect)="onNodeSelect($event)"
+                           styleClass="company">
+        <ng-template let-node pTemplate="person">
+          <div class="node-header p-corner-top">{{node.label}}</div>
+          <div class="node-content">
+            <img src="{{node.data.img}}" alt="" class="img-fluid rounded-circle w-60">
+            <div>{{node.data.name}}</div>
+          </div>
+        </ng-template>
+        <ng-template let-node pTemplate="department">
+          {{node.label}}
+        </ng-template>
+      </p-organizationChart>
+
+  </div>
+</div>
+
